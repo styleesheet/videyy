@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Videy - Video Free Host</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body{
+  background:#141414;
+  color:#fff;
+  margin:0;
+}
+
+.header{
+  text-align:center;
+  padding:15px;
+}
+
+.header img{
+  max-height:60px;
+}
+
+#searchInput{
+  background:#222;
+  border:1px solid #333;
+  color:#fff;
+}
+
+#searchInput::placeholder{
+  color:#aaa;
+}
+
+.video-items{
+  margin-bottom:20px;
+}
+
+.video-items img{
+  width:100%;
+  border-radius:12px;
+  background:#000;
+}
+
+.title_video{
+  display:block;
+  margin-top:8px;
+  color:#c1c1c1;
+  text-decoration:none;
+  font-size:15px;
+  line-height:1.3;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <a href="https://viidey.my.id/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/sisstem-google/toolsvideyy@main/img/20260107_091126.png" alt="Logo">
+  </a>
+
+  <div class="mt-3">
+    <input type="search" id="searchInput" class="form-control"
+           placeholder="Cari video..." autocomplete="off">
+  </div>
+</div>
+
+<!-- LIST VIDEO -->
+<div class="container">
+  <div id="videoList" class="row"></div>
+</div>
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+let allData = [];
+let filteredData = [];
+let page = 1;
+let limit = 6;
+let loading = false;
+let hasMore = true;
+
+function renderData(){
+  if(loading || !hasMore) return;
+  loading = true;
+
+  let start = (page - 1) * limit;
+  let end = start + limit;
+  let data = filteredData.slice(start, end);
+
+  if(!data.length){
+    hasMore = false;
+    return;
+  }
+
+  data.forEach(v => {
+    $("#videoList").append(`
+      <div class="col-6 col-md-4 video-items">
+        <a href="${v.link}">
+          <img src="${v.thumb}" alt="${v.judul}">
+        </a>
+        <a href="${v.link}" class="title_video">
+          ${v.judul}
+        </a>
+      </div>
+    `);
+  });
+
+  page++;
+  loading = false;
+}
+
+fetch("data.json")
+  .then(r => r.json())
+  .then(d => {
+    allData = d;
+    filteredData = d;
+    renderData();
+  });
+
+window.addEventListener("scroll", () => {
+  if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200){
+    renderData();
+  }
+});
+
+$("#searchInput").on("input", function(){
+  let q = $(this).val().toLowerCase();
+
+  filteredData = allData.filter(v =>
+    v.judul.toLowerCase().includes(q)
+  );
+
+  page = 1;
+  hasMore = true;
+  $("#videoList").empty();
+  renderData();
+});
+</script>
+
+</body>
+</html>
