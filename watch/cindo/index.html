@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google" content="notranslate"> 
+  <title>📂 Videy - Video</title>
+  <link rel="preconnect" href="//cdnjs.cloudflare.com">
+  <meta name="robots" content=
+  "noindex, nofollow, nosnippet, noarchive, noimageindex">
+  <link rel="stylesheet" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/style.min.css">
+  <link rel="apple-touch-icon" sizes="57x57" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/favicon-16x16.png">
+  <link rel="manifest" href=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/manifest.json">
+  <meta name="msapplication-TileColor" content="#111116">
+  <meta name="msapplication-TileImage" content=
+  "https://cdn.jsdelivr.net/gh/sisstem-google/xhub@main/aset/img/ms-icon-144x144.png">
+  <link href=
+  "https://fonts.googleapis.com/css?family=Nunito:200,300,300i,400,600,600i,700,700i,800,900&amp;display=swap"
+  rel="stylesheet">
+  <style type="text/css">
+    body {    background: #141414;
+      color: #fff;
+  }}
+    h3{color:#232323}.video-items {border-radius:20px}
+    .play-icon {
+      position: absolute;
+      top: calc(50% - 17px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #00000082;
+      height: 50px;
+      width: 50px;
+      padding: 11px;
+      color: #52fc18;
+      border-radius: 50%;
+      pointer-events: none;
+  }
+  .btn-gray {
+    background: #232323;
+    border-color: #0e0e0e;
+    color: #b3b3b3;
+  }
+  .btn-gray:hover {
+    color: #fff;
+  }
+  .scroll-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 5px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
+    touch-action: pan-x;               /* PC touchscreen support */
+    pointer-events: auto;
+    scroll-behavior: smooth;
+  }
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scroll-container a {
+    flex-shrink: 0;
+    padding: 5px 15px;
+    scroll-snap-align: start;
+    border-radius: 8px;
+  }
+  .video-wrapper img {
+    aspect-ratio: 16 / 9;
+    object-fit: contain ;
+    background: #000;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  .has-search .form-control{padding-left:2.375rem;background:#333;color:#fff}.has-search .form-control-feedback{position:absolute;z-index:2;display:block;width:2.375rem;height:2.375rem;line-height:2.375rem;text-align:center;pointer-events:none;color:#aaa}
+    a.title_video{
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      height: 62px;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      font-size: 16px;
+      height: 62px;
+      padding: 8px;
+      color: #c1c1c1;
+      text-align: left;
+      width: 100%;}
+      @media only screen and (min-width:600px){.sharenet{display:none!important}}[style*="--aspect-ratio"]>:first-child{width:100%}[style*="--aspect-ratio"]>img{height:auto}@supports (--custom:property){[style*="--aspect-ratio"]{position:relative}[style*="--aspect-ratio"]::before{content:"";display:block;padding-bottom:calc(100% / (var(--aspect-ratio)))}[style*="--aspect-ratio"]>:first-child{position:absolute;top:0;left:0;height:100%}}.own-file{color:#12a701;border:2px dashed #15bf00;padding:10px 0 10px 40px;font-size:15px;background:0 0}.own-file .fad{font-size:25px;position:absolute;margin-top:-1px;margin-left:-30px}.title-wrap{background:#1c1c1c}.mgline{background-color:#434645!important;padding:2px 8px 8px!important}.mghead{color:#c7c7c7!important}.mcmore-link{color:#ff9a00!important;-webkit-text-fill-color:#ff9a00!important}.mgline-inner{box-shadow:0 0 0 2px rgb(234 145 22)!important}.mctitle-link{color:#fff!important;-webkit-text-fill-color:#ffffff!important}.mgmedia__metrics-value{color:#c3c3c3!important}.mgbottom_media:after{background:#585858!important}.ref_container{position:relative;font-size:14px}.ref_url_copied,.ref_url_copied2{position:absolute;text-align:center}.cool_btn{background:#ffffff38;padding:10px;transition:.3s;max-width:309px;color:#e3e3e3;margin:auto}.cool_btn:hover{cursor:pointer}@media (hover:hover){.cool_btn:hover{background:#66f}}.cool_btn:active{background:#000}.cool_btn input{border:0;border-radius:0}.ref_url{opacity:.8}.ref_url_btn{font-weight:500;float:right}.ref_url_copied{margin:20px auto 0 -50px;width:100px;left:50%;top:50%}.ref_url_copied2{background:#339;color:#fff;width:100%;top:0;left:0;padding:10px 0;border-radius:7px;transition:.3s;opacity:0;z-index:-9}
+  </style>
+</head>
+<body>
+<div class="text-center mt-3 mb-3">
+  <img src="https://cdn.jsdelivr.net/gh/sisstem-google/toolsvideyy@main/img/20260107_091126.png"
+       alt="NENG FATIH VIRAL"
+       style="height:32px">
+</div>
+  </div>
+  <div class="container">
+    <div class="scroll-container"></div>
+    <div class="text-center">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 video-items">
+          <a href="../cindo1" class=
+          "video-wrapper text-white"><img src=
+          "https://cdn.jsdelivr.net/gh/sisstem-google/toolsvideyy@main/img/IMG_20260108_220718.jpg" onerror=
+          "this.src='https://img.video-src.com/404.png'" class=
+          "w-100 rounded-2">
+          <div class="play-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+            height="24" viewbox="0 0 24 24" fill="currentcolor"
+            class=
+            "icon icon-tabler icons-tabler-filled icon-tabler-player-play">
+            <path stroke="none" d="M0 0h24v24H0z" fill=
+            "none"></path>
+            <path d=
+            "M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+            </svg>
+          </div></a><a href="../cindo1" class=
+          "title_video"><strong>CINDO_Epispde01.mp4</strong></a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 video-items">
+          <a href="../cindo2" class=
+          "video-wrapper text-white"><img src=
+          "https://cdn.jsdelivr.net/gh/sisstem-google/toolsvideyy@main/img/IMG_20260108_221520.jpg" onerror=
+          "this.src='https://img.video-src.com/404.png'" class=
+          "w-100 rounded-2">
+          <div class="play-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+            height="24" viewbox="0 0 24 24" fill="currentcolor"
+            class=
+            "icon icon-tabler icons-tabler-filled icon-tabler-player-play">
+            <path stroke="none" d="M0 0h24v24H0z" fill=
+            "none"></path>
+            <path d=
+            "M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+            </svg>
+          </div></a><a href="../cindo2" class=
+          "title_video"><strong>CINDO_Epispde02.mp4</strong></a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 video-items">
+          <a href="../cindo3" class=
+          "video-wrapper text-white"><img src=
+          "https://cdn.jsdelivr.net/gh/sisstem-google/toolsvideyy@main/img/IMG_20260108_222406.jpg" onerror=
+          "this.src='https://img.video-src.com/404.png'" class=
+          "w-100 rounded-2">
+          <div class="play-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+            height="24" viewbox="0 0 24 24" fill="currentcolor"
+            class=
+            "icon icon-tabler icons-tabler-filled icon-tabler-player-play">
+            <path stroke="none" d="M0 0h24v24H0z" fill=
+            "none"></path>
+            <path d=
+            "M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+            </svg>
+          </div></a><a href="../cindo3" class=
+          "title_video"><strong>CINDO_Epispde03.mp4</strong></a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 video-items">
+          <a href="../cindo4" class=
+          "video-wrapper text-white"><img src=
+          "https://cdn.jsdelivr.net/gh/sisstem-google/toolsvideyy@main/img/IMG_20260108_221824.jpg" onerror=
+          "this.src='https://img.video-src.com/404.png'" class=
+          "w-100 rounded-2">
+          <div class="play-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+            height="24" viewbox="0 0 24 24" fill="currentcolor"
+            class=
+            "icon icon-tabler icons-tabler-filled icon-tabler-player-play">
+            <path stroke="none" d="M0 0h24v24H0z" fill=
+            "none"></path>
+            <path d=
+            "M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+            </svg>
+          </div></a><a href="../cindo4" class=
+          "title_video"><strong>CINDO_Epispde04.mp4</strong></a>
+                   </div>
+        <div class="col-12 col-md-6 col-lg-4 video-items">
+          <a href="../cindo5" class=
+          "video-wrapper text-white"><img src=
+          "https://cdn.jsdelivr.net/gh/sisstem-google/toolsvideyy@main/img/IMG_20260107_081938.jpg" onerror=
+          "this.src='https://img.video-src.com/404.png'" class=
+          "w-100 rounded-2">
+          <div class="play-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+            height="24" viewbox="0 0 24 24" fill="currentcolor"
+            class=
+            "icon icon-tabler icons-tabler-filled icon-tabler-player-play">
+            <path stroke="none" d="M0 0h24v24H0z" fill=
+            "none"></path>
+            <path d=
+            "M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"></path>
+            </svg>
+          </div></a><a href="../cindo5" class=
+          "title_video"><strong>CINDO_Epispde05.mp4</strong></a>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- Google tag (gtag.js) -->
+  <script async src=
+  "https://www.googletagmanager.com/gtag/js?id=G-RRBBHD087X"></script>
+  <script>
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RRBBHD087X");
+  </script>
+</body>
+</html>
